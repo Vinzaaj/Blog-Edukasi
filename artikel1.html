@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artikel Edukasi</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6fa;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #2c3e50;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    main {
+      max-width: 800px;
+      margin: 20px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    .subject {
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .subject button {
+      width: 100%;
+      background: #3498db;
+      color: white;
+      border: none;
+      padding: 15px;
+      font-size: 16px;
+      text-align: left;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .subject button:hover {
+      background: #2980b9;
+    }
+    .content {
+      max-height: 0;
+      overflow: hidden;
+      background: #f9f9f9;
+      padding: 0 15px;
+      transition: all 0.4s ease;
+    }
+    .content.show {
+      max-height: 200px;
+      padding: 15px;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #2c3e50;
+      color: #fff;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Artikel Edukasi</h1>
+    <p>Mata Pembelajaran apa yang ingin kamu ketahui?</p>
+  </header>
+
+  <main>
+    <!-- Matematika -->
+    <div class="subject">
+      <button onclick="toggleContent(this)">📘 Matematika</button>
+      <div class="content">
+        <p><strong>Rumus Cepat:</strong> Belajar rumus matematika akan memudahkan kita menghitung dengan cepat dan tepat.</p>
+        <p><em>Manfaat:</em> Melatih logika, pemecahan masalah, dan berpikir kritis.</p>
+        <nav>  
+   <a href="matematika.html">Matematika</a>
+   </nav>
+      </div>
+    </div>
+    <!-- IPS -->
+    <div class="subject">
+      <button onclick="toggleContent(this)">🌍 IPS</button>
+      <div class="content">
+        <p><strong>Pemahaman Sosial:</strong> Mengenal sejarah, ekonomi, dan budaya untuk memahami dunia sekitar.</p>
+        <p><em>Manfaat:</em> Membantu kita bijak mengambil keputusan dalam kehidupan bermasyarakat.</p>
+      </div>
+    </div>
+
+    <!-- PJOK -->
+    <div class="subject">
+      <button onclick="toggleContent(this)">⚽ PJOK</button>
+      <div class="content">
+        <p><strong>Olahraga:</strong> Menjaga kesehatan tubuh dan membentuk kebiasaan hidup sehat.</p>
+        <p><em>Manfaat:</em> Tubuh bugar, pikiran segar, hidup lebih produktif.</p>
+      </div>
+    </div>
+
+    <!-- Bahasa Indonesia -->
+    <div class="subject">
+      <button onclick="toggleContent(this)">📖 Bahasa Indonesia</button>
+      <div class="content">
+        <p><strong>Keterampilan Bahasa:</strong> Melatih membaca, menulis, dan berbicara dengan baik.</p>
+        <p><em>Manfaat:</em> Bisa berkomunikasi lebih jelas dan efektif.</p>
+      </div>
+    </div>
+
+    <!-- Bahasa Pemrograman -->
+    <div class="subject">
+      <button onclick="toggleContent(this)">💻 Bahasa Pemrograman</button>
+      <div class="content">
+        <p><strong>Koding:</strong> Belajar membuat website, aplikasi, dan teknologi masa depan.</p>
+        <p><em>Manfaat:</em> Bisa membangun karir di dunia IT dan menghasilkan karya digital.</p>
+      </div>
+    </div>
+
+    <!-- PPKN -->
+    <div class="subject">
+      <button onclick="toggleContent(this)">🏛️ PPKN</button>
+      <div class="content">
+        <p><strong>Pendidikan Kewarganegaraan:</strong> Memahami hak dan kewajiban sebagai warga negara.</p>
+        <p><em>Manfaat:</em> Membentuk pribadi yang cinta tanah air dan berkarakter baik.</p>
+      </div>
+    </div>
+
+    <!-- Bahasa Inggris -->
+    <div class="subject">
+      <button onclick="toggleContent(this)">🗣️ Bahasa Inggris</button>
+      <div class="content">
+        <p><strong>Keterampilan Global:</strong> Bahasa internasional yang membuka peluang di dunia kerja.</p>
+        <p><em>Manfaat:</em> Bisa berkomunikasi dengan orang dari berbagai negara.</p>
+      </div>
+    </div>
+
+    <!-- Coming Soon -->
+    <div class="subject">
+      <button disabled>⏳ Coming Soon!</button>
+    </div>
+  </main>
+    <footer>
+    &copy; 2025 Vinzaa | Artikel Edukasi
+  </footer>
+
+  <script>
+    function toggleContent(btn) {
+      const content = btn.nextElementSibling;
+      content.classList.toggle("show");
+    }
+  </script>
+</body>
+</html>

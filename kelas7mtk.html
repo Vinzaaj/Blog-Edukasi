@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Matematika Kelas 7</title>
+  <style>
+    :root{
+      --card-bg:#ffffff;
+      --accent:#1678c2;
+      --muted:#6b7280;
+      --page-bg:#f4f7fb;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter, "Segoe UI", Roboto, Arial, sans-serif;
+      background:var(--page-bg);
+      color:#1f2937;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    header{
+      background:linear-gradient(90deg,var(--accent),#1aa3e6);
+      color:white;
+      padding:22px 18px;
+      text-align:center;
+      box-shadow:0 4px 18px rgba(23,34,56,0.12);
+    }
+    header h1{margin:0;font-size:20px}
+    header p{margin:6px 0 0;font-size:13px;opacity:.95}
+
+    .wrap{max-width:980px;margin:20px auto;padding:0 16px}
+
+    .nav-row{display:flex;gap:8px;flex-wrap:wrap;justify-content:space-between;align-items:center;margin:12px 0}
+    .btn{
+      background:var(--accent);
+      color:white;
+      border:none;
+      padding:10px 14px;
+      border-radius:10px;
+      cursor:pointer;
+      font-weight:600;
+      box-shadow:0 6px 12px rgba(22,120,194,0.12);
+    }
+    .btn.ghost{
+      background:transparent;color:var(--accent);
+      border:2px solid rgba(23,34,56,0.06);
+      box-shadow:none;
+      font-weight:600;
+    }
+
+    .intro{
+      background:var(--card-bg);
+      border-radius:12px;
+      padding:18px;
+      box-shadow:0 6px 18px rgba(16,24,40,0.06);
+      margin-bottom:18px;
+    }
+    .intro h2{margin:0 0 8px}
+    .intro p{margin:0;color:var(--muted)}
+
+    /* accordion / cards */
+    .accordion{display:grid;gap:12px}
+    .card{
+      background:var(--card-bg);
+      border-radius:12px;
+      overflow:hidden;
+      box-shadow:0 6px 18px rgba(16,24,40,0.06);
+      border:1px solid rgba(16,24,40,0.04);
+      transition:transform .18s ease,box-shadow .18s ease;
+    }
+    .card:hover{transform:translateY(-4px)}
+    .card-header{
+      display:flex;align-items:center;justify-content:space-between;padding:14px 16px;cursor:pointer;
+    }
+    .card-title{display:flex;gap:12px;align-items:center}
+    .card-title h3{margin:0;font-size:16px}
+    .card-title p{margin:0;color:var(--muted);font-size:13px}
+    .chev{transition: transform .28s ease}
+    .card-body{
+      padding:0 16px 16px;
+      max-height:0;
+      overflow:hidden;
+      transition: max-height .4s ease, padding .25s linear;
+    }
+    .card-body.show{
+      padding:16px;
+      max-height:1200px;
+    }
+
+    .section{
+      display:grid;gap:10px;margin-bottom:12px;
+    }
+    .rumus{
+      background:#eef8ff;border-left:4px solid var(--accent);padding:10px;border-radius:8px;font-weight:600;
+    }
+    .ex{
+      background:#fff8e6;border-left:4px solid #f59e0b;padding:10px;border-radius:8px;
+    }
+    .svg-ill{display:block;margin:10px auto;max-width:320px;width:100%;height:auto;border-radius:10px}
+
+    .exercise{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+    .small-input{width:84px;padding:6px;border-radius:8px;border:1px solid #e6eef8}
+    .answer{background:#f3f4f6;padding:10px;border-radius:8px;color:#0f172a}
+
+    footer{
+      text-align:center;padding:18px;margin-top:22px;color:var(--muted);font-size:13px
+    }
+
+    /* responsive */
+    @media (max-width:640px){
+      .card-header{padding:12px}
+      .card-body.show{padding:12px}
+      .svg-ill{max-width:260px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Matematika Kelas 7 — Lengkap & Interaktif</h1>
+    <p>Rumus, penjelasan singkat, contoh soal & latihan — offline siap Acode</p>
+  </header>
+
+  <div class="wrap">
+    <div class="nav-row">
+      <div>
+        <button class="btn" onclick="location.href='kelas7.html'">← Kembali ke Kelas 7</button>
+        <button class="btn ghost" onclick="scrollToTop()">Ke Atas</button>
+      </div>
+      <div style="color:var(--muted);font-size:13px">Level: <strong>Kelas 7</strong></div>
+    </div>
+
+    <div class="intro">
+      <h2>Apa yang ada di halaman ini?</h2>
+      <p>Materi utama Matematika Kelas 7 (ringkas dan jelas). Klik tiap bab untuk melihat rumus, penjelasan singkat, contoh soal, dan latihan. Cocok buat belajar cepat & persiapan ujian.</p>
+    </div>
+
+    <div class="accordion">
+
+      <!-- 1 Bilangan Bulat & Pecahan -->
+      <article class="card" id="card-bilangan">
+        <div class="card-header" onclick="toggleCard('body-bilangan',this)">
+          <div class="card-title">
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" fill="#fff"/><path d="M7 8h10M7 12h10M7 16h4" stroke="#1678c2" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div>
+              <h3>Bilangan Bulat & Pecahan</h3>
+              <p>Tambah, kurang, kali, bagi, pecahan senilai, dan operasi pecahan</p>
+            </div>
+          </div>
+          <div class="chev">▾</div>
+        </div>
+        <div class="card-body" id="body-bilangan">
+          <div class="section">
+            <div class="rumus">
+              <div><strong>Penjumlahan/ Pengurangan Bulat:</strong> ikuti tanda positif/negatif. Contoh: (+3) + (−5) = −2</div>
+              <div style="margin-top:6px"><strong>Perkalian Pecahan:</strong> (a/b) × (c/d) = (a×c)/(b×d)</div>
+              <div style="margin-top:6px"><strong>Pembagian Pecahan:</strong> (a/b) ÷ (c/d) = (a/b) × (d/c)</div>
+            </div>
+
+            <!-- SVG ilustrasi pecahan -->
+            <svg class="svg-ill" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+              <rect x="4" y="8" width="56" height="24" rx="4" fill="#ffedd5"></rect>
+              <text x="32" y="24" font-size="12" text-anchor="middle" fill="#7c2d12">2/3</text>
+
+              <rect x="76" y="8" width="56" height="24" rx="4" fill="#dbeafe"></rect>
+              <text x="104" y="24" font-size="12" text-anchor="middle" fill="#0b4a6f">3/4</text>
+
+              <rect x="148" y="8" width="44" height="24" rx="4" fill="#dcfce7"></rect>
+              <text x="170" y="24" font-size="12" text-anchor="middle" fill="#14532d">6/12 = 1/2</text>
+
+              <text x="32" y="52" font-size="12" fill="#374151">2/3 × 3/4 = 1/2</text>
+            </svg>
+
+            <div class="ex">
+              <strong>Contoh:</strong> Hitung 2/3 × 3/4 = ? → Jawab: 6/12 = 1/2
+            </div>
+
+            <div>
+              <strong>Latihan singkat:</strong>
+              <div style="margin-top:8px" class="exercise">
+                <label>Hitung 5/6 × 2/3 = </label>
+                <button class="btn ghost" onclick="showAnswer('a1')">Tampilkan Jawaban</button>
+                <div id="a1" class="answer" style="display:none">= 10/18 = 5/9</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2 Himpunan -->
+      <article class="card" id="card-himpunan">
+        <div class="card-header" onclick="toggleCard('body-himpunan',this)">
+          <div class="card-title">
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" fill="#fff"/><path d="M12 7a5 5 0 100 10 5 5 0 000-10z" stroke="#1678c2" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div>
+              <h3>Himpunan</h3>
+              <p>Notasi, gabungan (∪), irisan (∩), komplemen</p>
+            </div>
+          </div>
+          <div class="chev">▾</div>
+        </div>
+        <div class="card-body" id="body-himpunan">
+          <div class="section">
+            <div class="rumus">
+              <strong>Notasi:</strong> A = {1,2,3} <br>
+              <strong>Gabungan:</strong> A ∪ B = semua elemen A atau B <br>
+              <strong>Irisan:</strong> A ∩ B = elemen yang sama-sama ada di A dan B
+            </div>
+
+            <!-- SVG Venn -->
+            <svg class="svg-ill" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="80" cy="60" r="40" fill="rgba(59,130,246,0.25)"/>
+              <circle cx="120" cy="60" r="40" fill="rgba(16,185,129,0.25)"/>
+              <text x="60" y="30" font-size="12" fill="#0b3b66">A</text>
+              <text x="140" y="30" font-size="12" fill="#054f33">B</text>
+              <text x="96" y="66" font-size="12" fill="#042a2a">A∩B</text>
+            </svg>
+
+            <div class="ex">
+              <strong>Contoh:</strong> A={1,2,3}, B={2,3,4} → A∩B={2,3}, A∪B={1,2,3,4}
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3 Aljabar Dasar -->
+      <article class="card" id="card-aljabar">
+        <div class="card-header" onclick="toggleCard('body-aljabar',this)">
+          <div class="card-title">
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" fill="#fff"/><path d="M7 17l10-10M7 7h.01M17 17H7" stroke="#1678c2" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div>
+              <h3>Aljabar Dasar</h3>
+              <p>Variabel, bentuk aljabar, operasi hitung sederhana</p>
+            </div>
+          </div>
+          <div class="chev">▾</div>
+        </div>
+        <div class="card-body" id="body-aljabar">
+          <div class="section">
+            <div class="rumus">
+              <strong>Bentuk aljabar:</strong> ax + b <br>
+              <strong>Operasi:</strong> (2x + 3) + (x − 1) = 3x + 2
+            </div>
+
+            <div class="ex">
+              <strong>Contoh:</strong> Selesaikan: (5x − 2) − (2x + 4) = ? → 3x − 6
+            </div>
+
+            <div style="margin-top:8px">
+              <strong>Latihan:</strong>
+              <div class="exercise" style="margin-top:8px">
+                Sederhanakan: (4x + 5) − (x − 2) = ?
+                <button class="btn ghost" onclick="showAnswer('a2')">Jawaban</button>
+                <div id="a2" class="answer" style="display:none">= 3x + 7</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4 Perbandingan -->
+      <article class="card" id="card-perbandingan">
+        <div class="card-header" onclick="toggleCard('body-perbandingan',this)">
+          <div class="card-title">
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" fill="#fff"/><path d="M6 12h12M6 8h12M6 16h6" stroke="#1678c2" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div>
+              <h3>Perbandingan & Skala</h3>
+              <p>Rasio, perbandingan sebanding, dan skala peta</p>
+            </div>
+          </div>
+          <div class="chev">▾</div>
+        </div>
+        <div class="card-body" id="body-perbandingan">
+          <div class="section">
+            <div class="rumus">
+              <strong>Perbandingan:</strong> a:b = a/b <br>
+              <strong>Skala:</strong> skala = jarak pada peta / jarak sebenarnya
+            </div>
+
+            <div class="ex">
+              Contoh: Jika skala 1:100000 dan jarak antar kota di peta 3 cm → jarak nyata = 3 × 100000 cm = 300000 cm = 3 km
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5 Bangun Datar (ringkasan) -->
+      <article class="card" id="card-bangun">
+        <div class="card-header" onclick="toggleCard('body-bangun',this)">
+          <div class="card-title">
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" fill="#fff"/><path d="M4 20h16M4 4h6v12H4z" stroke="#1678c2" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div>
+              <h3>Bangun Datar (Persegi, Segitiga, Lingkaran, dll)</h3>
+              <p>Rumus luas dan keliling + contoh</p>
+            </div>
+          </div>
+          <div class="chev">▾</div>
+        </div>
+        <div class="card-body" id="body-bangun">
+          <div class="section">
+            <div class="rumus">
+              <strong>Persegi:</strong> L = s × s ; K = 4s <br>
+              <strong>Persegi Panjang:</strong> L = p × l ; K = 2(p + l) <br>
+              <strong>Segitiga:</strong> L = ½ × a × t ; K = a + b + c <br>
+              <strong>Lingkaran:</strong> L = πr² ; K = 2πr
+            </div>
+
+            <svg class="svg-ill" viewBox="0 0 360 120" xmlns="http://www.w3.org/2000/svg">
+              <!-- persegi -->
+              <rect x="10" y="10" width="80" height="80" fill="#fffbeb" stroke="#f59e0b"/>
+              <text x="50" y="60" text-anchor="middle" font-size="12" fill="#92400e">Persegi</text>
+              <!-- segitiga -->
+              <polygon points="140,90 100,20 180,20" fill="#e6f7ff" stroke="#0369a1"/>
+              <text x="140" y="105" text-anchor="middle" font-size="12" fill="#044e7c">Segitiga</text>
+              <!-- lingkaran -->
+              <circle cx="280" cy="50" r="30" fill="#ffe6f0" stroke="#db2777"/>
+              <text x="280" y="105" text-anchor="middle" font-size="12" fill="#6b0b36">Lingkaran</text>
+            </svg>
+
+            <div class="ex">
+              <strong>Contoh:</strong> Lingkaran r=7 cm → L=π×7² ≈ 153.94 cm² (pakai π≈3.14)
+            </div>
+
+            <!-- area calculator sederhana -->
+            <div style="margin-top:12px">
+              <strong>Hitung cepat (Persegi panjang):</strong>
+              <div style="margin-top:8px" class="exercise">
+                <input id="p_p" class="small-input" placeholder="panjang" type="number">
+                <input id="p_l" class="small-input" placeholder="lebar" type="number">
+                <button class="btn ghost" onclick="calcRect()">Hitung Luas</button>
+                <div id="rectRes" class="answer" style="display:none"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 6 Statistika dasar -->
+      <article class="card" id="card-stat">
+        <div class="card-header" onclick="toggleCard('body-stat',this)">
+          <div class="card-title">
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" fill="#fff"/><path d="M4 19h16M8 15v4M12 11v8M16 7v12" stroke="#1678c2" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div>
+              <h3>Statistika Dasar</h3>
+              <p>Mean, Median, Modus & contoh</p>
+            </div>
+          </div>
+          <div class="chev">▾</div>
+        </div>
+        <div class="card-body" id="body-stat">
+          <div class="section">
+            <div class="rumus">
+              <strong>Mean (Rata-rata):</strong> x̄ = Σx / n <br>
+              <strong>Median:</strong> nilai tengah bila data diurutkan <br>
+              <strong>Modus:</strong> nilai yang paling sering muncul
+            </div>
+
+            <div class="ex">
+              Contoh: Data 2,3,3,5,7 → Mean = (2+3+3+5+7)/5 = 20/5 = 4 ; Median = 3 ; Modus = 3
+            </div>
+
+            <div style="margin-top:8px">
+              <strong>Latihan (hitung Mean):</strong>
+              <div style="margin-top:8px" class="exercise">
+                <input id="statInput" class="small-input" placeholder="contoh:1,2,3" />
+                <button class="btn ghost" onclick="calcMean()">Hitung Mean</button>
+                <div id="meanRes" class="answer" style="display:none"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div> <!-- end accordion -->
+
+    <footer>
+      &copy; 2025 Vinzaa • Materi Matematika Kelas 7 • Dibuat oleh Robot Neko
+    </footer>
+  </div>
+
+  <script>
+    // helper: scroll to top
+    function scrollToTop(){window.scrollTo({top:0,behavior:'smooth'})}
+
+    // toggle accordion card - show only clicked? we'll allow multiple but close if clicked again
+    function toggleCard(id, headerEl){
+      const body = document.getElementById(id);
+      const chev = headerEl.querySelector('.chev');
+      if(body.classList.contains('show')){
+        body.classList.remove('show');
+        chev.style.transform = 'rotate(0deg)';
+      } else {
+        body.classList.add('show');
+        chev.style.transform = 'rotate(180deg)';
+        // smooth scroll to opened content
+        setTimeout(()=> body.scrollIntoView({behavior:'smooth', block:'center'}),200);
+      }
+    }
+
+    // show answer helper
+    function showAnswer(id){
+      const el = document.getElementById(id);
+      if(el.style.display === 'none' || el.style.display === '') el.style.display = 'block';
+      else el.style.display = 'none';
+      el.scrollIntoView({behavior:'smooth', block:'center'});
+    }
+
+    // calculator persegi panjang
+    function calcRect(){
+      const p = parseFloat(document.getElementById('p_p').value);
+      const l = parseFloat(document.getElementById('p_l').value);
+      const out = document.getElementById('rectRes');
+      if(isNaN(p) || isNaN(l)){ out.style.display='block'; out.innerText='Masukkan panjang & lebar yang valid'; return; }
+      const area = p * l;
+      out.style.display='block';
+      out.innerText = 'Luas = ' + area;
+      out.scrollIntoView({behavior:'smooth', block:'center'});
+    }
+
+    // calc mean from comma separated numbers
+    function calcMean(){
+      const raw = document.getElementById('statInput').value.trim();
+      const out = document.getElementById('meanRes');
+      if(!raw){ out.style.display='block'; out.innerText='Masukkan data (contoh: 2,3,3,5)'; return; }
+      const arr = raw.split(',').map(s => parseFloat(s.trim())).filter(x => !isNaN(x));
+      if(arr.length === 0){ out.style.display='block'; out.innerText='Data tidak valid'; return; }
+      const sum = arr.reduce((a,b)=>a+b,0);
+      const mean = sum / arr.length;
+      out.style.display='block';
+      out.innerText = 'Mean = ' + mean.toFixed(2) + '  (n=' + arr.length + ')';
+      out.scrollIntoView({behavior:'smooth', block:'center'});
+    }
+
+    // reveal first card on load
+    window.addEventListener('DOMContentLoaded', () => {
+      const first = document.querySelector('.card-body');
+      if(first) first.classList.add('show');
+    });
+  </script>
+</body>
+</html>
