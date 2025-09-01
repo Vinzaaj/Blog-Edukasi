@@ -1,2 +1,2 @@
 # Blog-Edukasi
-Selamat datang Di Blog Pertama ku
+Saya Sedang Belajar Membuat Website Pertama 📚
